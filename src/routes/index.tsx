@@ -18,9 +18,12 @@ import {
   BarChart3,
   ShieldCheck,
   Zap,
-  Check,
-  Flame,
-  ListFilter,
+  Target,
+  Users,
+  Mail,
+  MessageSquare,
+  HeartHandshake,
+  GraduationCap,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -217,14 +220,20 @@ export default function Landing() {
             >
               Home
             </Link>
-            <a href="#features" className="hover:text-[#EAA82C] transition-colors font-semibold">
-              Features Log
+            <a href="#about" className="hover:text-[#EAA82C] transition-colors font-medium">
+              About
             </a>
-            <a href="#pillars" className="hover:text-[#EAA82C] transition-colors">
+            <a href="#features" className="hover:text-[#EAA82C] transition-colors font-medium">
+              Features
+            </a>
+            <a href="#pillars" className="hover:text-[#EAA82C] transition-colors font-medium">
               Pillars
             </a>
-            <a href="#roadmap" className="hover:text-[#EAA82C] transition-colors">
+            <a href="#roadmap" className="hover:text-[#EAA82C] transition-colors font-medium">
               Roadmap
+            </a>
+            <a href="#contact" className="hover:text-[#EAA82C] transition-colors font-medium">
+              Contact
             </a>
           </nav>
 
@@ -346,7 +355,7 @@ export default function Landing() {
                   size="lg"
                   className="rounded-full border-2 border-[#182232] text-[#182232] hover:bg-[#182232] hover:text-white px-6 py-6 text-base font-semibold transition-all"
                 >
-                  <a href="#features">View Features Log &darr;</a>
+                  <a href="#features">Explore Features &darr;</a>
                 </Button>
               </div>
 
@@ -385,7 +394,112 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* FULL FEATURES LOG SECTION */}
+      {/* ABOUT SECTION */}
+      <section id="about" className="py-20 bg-[#FAF7F2] border-t border-[#EADBCA] relative scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Story & Vision */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF3D6] border border-[#F8D886] text-xs font-bold uppercase tracking-wider text-[#9A6208]">
+                <GraduationCap className="h-3.5 w-3.5 text-[#EAA82C]" />
+                About MLN CareerPilot
+              </div>
+
+              <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#182232] tracking-tight leading-tight">
+                Built by Students, <br />
+                <span className="text-[#EAA82C]">Designed for Engineering Excellence.</span>
+              </h2>
+
+              <p className="text-base sm:text-lg text-[#182232]/80 leading-relaxed font-normal">
+                Every year, millions of engineering students embark on their career journey with
+                scattered spreadsheets, lost browser bookmarks, and last-minute interview panic in
+                their final semester.
+              </p>
+
+              <p className="text-base text-[#182232]/80 leading-relaxed font-normal">
+                <strong>MLN CareerPilot</strong> was created to replace chaotic preparation with a
+                structured, data-backed flight deck. We break down the four-year engineering journey
+                into manageable daily study sessions, systematic spaced repetition for coding
+                problems, and real-time readiness scoring.
+              </p>
+
+              {/* Core Tenets */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div className="p-4 rounded-2xl bg-white border border-[#EADBCA] shadow-sm">
+                  <div className="h-9 w-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold mb-3">
+                    <Target className="h-4.5 w-4.5" />
+                  </div>
+                  <h4 className="font-bold text-sm text-[#182232]">Daily Momentum</h4>
+                  <p className="text-xs text-[#182232]/70 mt-1">
+                    Small daily tasks compound into mastery before campus placements start.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-[#EADBCA] shadow-sm">
+                  <div className="h-9 w-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold mb-3">
+                    <Brain className="h-4.5 w-4.5" />
+                  </div>
+                  <h4 className="font-bold text-sm text-[#182232]">Spaced Repetition</h4>
+                  <p className="text-xs text-[#182232]/70 mt-1">
+                    Retain solved problems with automatic 1, 3, 7, 14 & 30-day revisions.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-[#EADBCA] shadow-sm">
+                  <div className="h-9 w-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold mb-3">
+                    <BarChart3 className="h-4.5 w-4.5" />
+                  </div>
+                  <h4 className="font-bold text-sm text-[#182232]">Honest Score</h4>
+                  <p className="text-xs text-[#182232]/70 mt-1">
+                    A genuine 0–100 score reflecting true readiness across all placement pillars.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Card: MLN Monogram Emblem Showcase */}
+            <div className="lg:col-span-5 relative">
+              <div className="rounded-3xl bg-[#182232] text-white p-8 sm:p-10 border border-[#2A3B54] shadow-2xl relative overflow-hidden text-center space-y-6">
+                <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[#EAA82C]/15 blur-3xl pointer-events-none" />
+
+                <div className="flex justify-center">
+                  <img
+                    src="/mln-logo.jpg"
+                    alt="MLN Emblem"
+                    className="h-28 w-28 rounded-3xl object-cover shadow-xl border-2 border-[#EAA82C] transform hover:rotate-3 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs uppercase tracking-widest text-[#EAA82C] font-bold">
+                    MLN STUDENT DEVELOPER KIT
+                  </span>
+                  <h3 className="font-display text-2xl font-bold text-white">
+                    Better Skills, Bigger Dreams
+                  </h3>
+                  <p className="text-xs text-white/70 max-w-sm mx-auto leading-relaxed">
+                    Designed for engineering students across all branches and semesters — from Computer
+                    Science and IT to Electronics and Electrical.
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-[#2A3B54] grid grid-cols-2 gap-3 text-left">
+                  <div className="bg-[#233147] p-3 rounded-xl border border-[#2A3B54]">
+                    <div className="text-xs text-white/60">Target Roles</div>
+                    <div className="text-sm font-bold text-white mt-0.5">Product & Service</div>
+                  </div>
+                  <div className="bg-[#233147] p-3 rounded-xl border border-[#2A3B54]">
+                    <div className="text-xs text-white/60">Platform Access</div>
+                    <div className="text-sm font-bold text-[#EAA82C] mt-0.5">100% Free Forever</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FULL FEATURES SECTION */}
       <section id="features" className="py-20 bg-white border-t border-b border-[#EADBCA] relative scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6">
           {/* Header */}
@@ -395,7 +509,7 @@ export default function Landing() {
               Platform Release & Capabilities Matrix
             </div>
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#182232] tracking-tight">
-              Complete Features Log
+              Platform Features
             </h2>
             <p className="text-base sm:text-lg text-[#182232]/75">
               Explore all 8 dedicated modules and built-in capabilities engineered to take you from
@@ -671,7 +785,74 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Community / Final Banner */}
+      {/* CONTACT & COMMUNITY SECTION */}
+      <section id="contact" className="py-20 bg-white border-t border-[#EADBCA] relative scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="rounded-3xl bg-gradient-to-r from-[#FEF3D6] via-amber-100/40 to-[#FEF3D6] border border-[#F8D886] p-8 sm:p-14 shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#182232] text-white text-xs font-bold tracking-wider uppercase">
+                  <HeartHandshake className="h-3.5 w-3.5 text-[#EAA82C]" />
+                  Contact & Student Support
+                </div>
+
+                <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[#182232] tracking-tight">
+                  Have Questions or Suggestions? We are Here to Help.
+                </h2>
+
+                <p className="text-base text-[#182232]/75 max-w-lg">
+                  CareerPilot is continuously updated for engineering students. Connect with us for
+                  curriculum recommendations, bug reports, or study plan guidance.
+                </p>
+
+                <div className="pt-2 flex flex-wrap gap-4 text-sm font-semibold text-[#182232]">
+                  <a
+                    href="mailto:support@careerpilot.dev"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] transition-colors"
+                  >
+                    <Mail className="h-4 w-4 text-[#EAA82C]" />
+                    support@careerpilot.dev
+                  </a>
+
+                  <a
+                    href="https://github.com/loknarayanpro-coder/mlnstudentdevelopkit"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] transition-colors"
+                  >
+                    <MessageSquare className="h-4 w-4 text-[#2563EB]" />
+                    GitHub Repository
+                  </a>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-[#EADBCA] shadow-md space-y-4">
+                <h4 className="font-display text-lg font-bold text-[#182232]">Send a Quick Note</h4>
+                <div className="space-y-3">
+                  <input
+                    type="text"
+                    placeholder="Your Name / College"
+                    className="w-full text-xs p-3 rounded-xl border border-[#EADBCA] bg-[#FAF7F2] focus:outline-none focus:ring-2 focus:ring-[#EAA82C]"
+                  />
+                  <textarea
+                    rows={3}
+                    placeholder="Tell us what feature or roadmap milestone you would like added..."
+                    className="w-full text-xs p-3 rounded-xl border border-[#EADBCA] bg-[#FAF7F2] focus:outline-none focus:ring-2 focus:ring-[#EAA82C]"
+                  />
+                  <Button
+                    onClick={() => alert("Thank you for your feedback! It has been noted.")}
+                    className="w-full rounded-full bg-[#182232] hover:bg-[#25344c] text-white text-xs font-bold py-5"
+                  >
+                    Send Feedback &rarr;
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Call to Action */}
       <section className="py-16 bg-[#FAF7F2] border-t border-[#EADBCA]/60">
         <div className="mx-auto max-w-4xl px-6 text-center space-y-6">
           <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-[#EAA82C] text-[#182232] shadow-md mx-auto">
@@ -712,7 +893,7 @@ export default function Landing() {
           </div>
 
           <p className="text-sm text-white/60">
-            &copy; {new Date().getFullYear()} CareerPilot. Learn Today, Build Tomorrow. All rights
+            &copy; {new Date().getFullYear()} MLN CareerPilot. Learn Today, Build Tomorrow. All rights
             reserved.
           </p>
 
@@ -720,14 +901,20 @@ export default function Landing() {
             <Link to="/auth" className="hover:text-[#EAA82C] transition-colors">
               Sign In
             </Link>
+            <a href="#about" className="hover:text-[#EAA82C] transition-colors">
+              About
+            </a>
             <a href="#features" className="hover:text-[#EAA82C] transition-colors">
-              Features Log
+              Features
             </a>
             <a href="#pillars" className="hover:text-[#EAA82C] transition-colors">
               Pillars
             </a>
             <a href="#roadmap" className="hover:text-[#EAA82C] transition-colors">
               Roadmap
+            </a>
+            <a href="#contact" className="hover:text-[#EAA82C] transition-colors">
+              Contact
             </a>
           </div>
         </div>
