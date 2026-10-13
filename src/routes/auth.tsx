@@ -204,21 +204,6 @@ function AuthPage() {
               {busy ? "Please wait…" : mode === "signin" ? "Sign In →" : mode === "signup" ? "Create Account →" : "Send Reset Link"}
             </Button>
 
-            {/* Quick Demo Credentials Autofill Helper */}
-            {mode === "signin" && (
-              <button
-                type="button"
-                onClick={() => {
-                  setEmail("student@careerpilot.com");
-                  setPassword("CareerPilot#2026!Demo");
-                }}
-                className="w-full py-2 px-3 rounded-xl bg-[#FAF7F2] hover:bg-[#F2EDE4] border border-dashed border-[#EADBCA] text-xs text-[#182232]/80 font-medium flex items-center justify-center gap-1.5 transition-colors"
-              >
-                <span>⚡ Fill Trial Account:</span>
-                <span className="font-mono text-[#EAA82C] font-semibold">student@careerpilot.com</span>
-              </button>
-            )}
-
             <div className="flex items-center justify-between pt-2 text-xs font-medium text-[#182232]/70">
               {mode === "signin" ? (
                 <>
