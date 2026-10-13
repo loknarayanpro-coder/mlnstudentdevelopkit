@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="cpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#0f172a" />
+  <circle cx="16" cy="16" r="10.5" stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.8" />
+  <polygon points="16,6.5 18.8,14.2 25.5,16 17.8,17.8 16,25.5 14.2,17.8 6.5,16 13.2,14.2" fill="url(#cpGrad)" />
+  <circle cx="16" cy="16" r="2.2" fill="#ffffff" />
+</svg>
