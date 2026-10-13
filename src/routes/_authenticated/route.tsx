@@ -62,23 +62,31 @@ function Shell() {
     <div className="min-h-screen md:flex bg-[#FAF7F2]">
       <aside className="hidden w-64 shrink-0 bg-[#182232] p-5 text-white md:block border-r border-[#2A3B54]">
         <div className="sticky top-4">
-          <Link to="/" className="mb-8 block">
-            <div className="flex items-center gap-2.5 px-2 font-display text-lg font-bold">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EAA82C] text-[#182232]">
-                <Compass className="h-4 w-4" />
+          <Link to="/" className="mb-8 block group">
+            <div className="flex items-center gap-3 px-2 font-display text-lg font-bold">
+              <img
+                src="/mln-logo.jpg"
+                alt="MLN Logo"
+                className="h-9 w-9 rounded-xl object-cover shadow-sm border border-[#2A3B54] group-hover:scale-105 transition-transform"
+              />
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-[#EAA82C] font-extrabold tracking-tight">MLN</span>
+                <span className="tracking-tight text-white font-semibold">PILOT</span>
               </div>
-              <span>CAREERPILOT</span>
             </div>
-            <div className="h-0.5 w-24 bg-[#EAA82C] rounded-full mt-1.5 ml-2" />
+            <div className="h-0.5 w-28 bg-[#EAA82C] rounded-full mt-2 ml-2" />
           </Link>
           {links}
         </div>
       </aside>
       <header className="sticky top-0 z-30 flex items-center justify-between bg-[#182232] px-4 py-3 text-white md:hidden border-b border-[#2A3B54]">
         <div className="flex items-center gap-2 font-display font-bold">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EAA82C] text-[#182232]">
-            <Compass className="h-4 w-4" />
-          </div>
+          <img
+            src="/mln-logo.jpg"
+            alt="MLN Logo"
+            className="h-7 w-7 rounded-lg object-cover border border-[#2A3B54]"
+          />
+          <span className="text-[#EAA82C]">MLN</span>
           <span>CareerPilot</span>
         </div>
         <button aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>

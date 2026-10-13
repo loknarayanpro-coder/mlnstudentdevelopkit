@@ -93,10 +93,15 @@ function AuthPage() {
         <div className="flex items-center justify-between relative z-10">
           <Link to="/" className="group flex flex-col items-start cursor-pointer">
             <div className="flex items-center gap-2.5 font-display text-xl font-bold tracking-tight text-white">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EAA82C] text-[#182232] shadow-sm">
-                <Compass className="h-5 w-5" />
+              <img
+                src="/mln-logo.jpg"
+                alt="MLN Logo"
+                className="h-10 w-10 rounded-xl object-cover shadow-sm border border-[#2A3B54] transform group-hover:scale-105 transition-transform"
+              />
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-[#EAA82C] font-extrabold">MLN</span>
+                <span>CAREERPILOT</span>
               </div>
-              <span>CAREERPILOT</span>
             </div>
             <div className="h-0.5 w-full bg-[#EAA82C] rounded-full mt-1 transform origin-left transition-transform group-hover:scale-x-110" />
           </Link>
@@ -158,9 +163,12 @@ function AuthPage() {
           <form onSubmit={submit} className="space-y-4">
             <div className="space-y-1">
               <div className="inline-flex md:hidden items-center gap-2 font-display text-lg font-bold text-[#182232] mb-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EAA82C] text-[#182232]">
-                  <Compass className="h-4 w-4" />
-                </div>
+                <img
+                  src="/mln-logo.jpg"
+                  alt="MLN Logo"
+                  className="h-7 w-7 rounded-lg object-cover border border-[#EADBCA]"
+                />
+                <span className="text-[#EAA82C]">MLN</span>
                 <span>CareerPilot</span>
               </div>
               <h1 className="font-display text-2xl font-bold text-[#182232]">

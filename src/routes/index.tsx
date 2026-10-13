@@ -42,13 +42,18 @@ export default function Landing() {
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#EADBCA]/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          {/* Logo with warm underline highlight */}
+          {/* MLN Monogram Logo with warm underline highlight */}
           <Link to="/" className="group flex flex-col items-start cursor-pointer">
             <div className="flex items-center gap-2.5 font-display text-xl font-bold tracking-tight text-[#182232]">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EAA82C] text-[#182232] shadow-sm">
-                <Compass className="h-5 w-5" />
+              <img
+                src="/mln-logo.jpg"
+                alt="MLN Logo"
+                className="h-10 w-10 rounded-xl object-cover shadow-sm border border-[#EADBCA] transform group-hover:scale-105 transition-transform"
+              />
+              <div className="flex items-baseline gap-1.5">
+                <span className="font-extrabold text-[#182232]">MLN</span>
+                <span className="font-semibold text-[#182232]/80 text-lg">CAREERPILOT</span>
               </div>
-              <span>CAREERPILOT</span>
             </div>
             <div className="h-1 w-full bg-[#EAA82C] rounded-full mt-0.5 transform origin-left transition-transform group-hover:scale-x-110" />
           </Link>
@@ -443,11 +448,16 @@ export default function Landing() {
       {/* Footer */}
       <footer className="mt-auto bg-[#182232] text-white py-12 border-t border-[#2A3B54]">
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 font-display text-lg font-bold">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EAA82C] text-[#182232]">
-              <Compass className="h-4 w-4" />
+          <div className="flex items-center gap-2.5 font-display text-lg font-bold">
+            <img
+              src="/mln-logo.jpg"
+              alt="MLN Logo"
+              className="h-8 w-8 rounded-lg object-cover shadow-sm border border-[#2A3B54]"
+            />
+            <div className="flex items-baseline gap-1">
+              <span className="text-[#EAA82C] font-extrabold">MLN</span>
+              <span>CareerPilot</span>
             </div>
-            <span>CareerPilot</span>
           </div>
 
           <p className="text-sm text-white/60">
