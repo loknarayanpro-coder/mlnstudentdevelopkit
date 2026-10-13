@@ -45,7 +45,11 @@ function Settings() {
   );
   return (
     <div className="space-y-6">
-      <PageHeader title="Settings" subtitle="Your profile shapes your plan." />
+      <PageHeader
+        badge="Account & Profile"
+        title="Student Settings"
+        subtitle="Manage your academic branch, current semester, primary language, and study availability."
+      />
       <Card title="Profile">
         <div className="grid gap-3 md:grid-cols-2">
           {field("full_name", "Name")}{field("branch", "Branch")}{field("semester", "Semester", "number")}{field("primary_language", "Language")}{field("proficiency", "Proficiency")}{field("placement_target", "Placement target")}{field("daily_hours", "Daily study hours", "number")}

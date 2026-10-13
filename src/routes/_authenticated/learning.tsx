@@ -19,7 +19,11 @@ export const Route = createFileRoute("/_authenticated/learning")({
 function Learning() {
   return (
     <div>
-      <PageHeader title="Learning & aptitude" subtitle="Java, DBMS, OS, networks, OOP, aptitude and interview questions." />
+      <PageHeader
+        badge="CS Core & Aptitude"
+        title="Technical Subjects & Interview Bank"
+        subtitle="Master Java, DBMS, Operating Systems, Computer Networks, and Quantitative Aptitude tests."
+      />
       <Tabs defaultValue="topics">
         <TabsList className="mb-4 flex-wrap"><TabsTrigger value="topics">Topics</TabsTrigger><TabsTrigger value="aptitude">Aptitude</TabsTrigger><TabsTrigger value="interview">Interview Q&A</TabsTrigger></TabsList>
         <TabsContent value="topics"><Topics /></TabsContent>

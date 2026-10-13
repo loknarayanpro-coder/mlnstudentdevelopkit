@@ -64,7 +64,11 @@ function Dsa() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="DSA tracker" subtitle="Log attempts — solved problems are scheduled for spaced revision (1, 3, 7, 14, 30 days)." />
+      <PageHeader
+        badge="DSA Repository"
+        title="Coding Problems & Spaced Revision"
+        subtitle="Track LeetCode, Codeforces & GeeksforGeeks problems with automatic revision intervals (1, 3, 7, 14, 30 days)."
+      />
       <Card title="Add problem">
         <form className="flex flex-wrap gap-2" onSubmit={(e) => { e.preventDefault(); add.mutate(undefined); }}>
           <Input placeholder="Title" value={f.title} onChange={(e) => setF({ ...f, title: e.target.value })} className="min-w-48 flex-1" maxLength={300} />

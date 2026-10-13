@@ -46,9 +46,10 @@ function Roadmap() {
   return (
     <div className="space-y-6">
       <PageHeader
+        badge="36-Week Placement Roadmap"
         title={roadmap.title}
-        subtitle={`Week ${cur} of ${weeks.length} · ${weeks.filter((w) => w.completed).length} completed · Target finish ${localDate(end)}`}
-        action={<label className="flex items-center gap-2 text-sm">Start <Input type="date" defaultValue={roadmap.start_date} className="w-auto" onBlur={(e) => e.target.value && e.target.value !== roadmap.start_date && setStart.mutate({ id: roadmap.id, start: e.target.value })} /></label>}
+        subtitle={`Week ${cur} of ${weeks.length} · ${weeks.filter((w) => w.completed).length} completed milestones · Target finish ${localDate(end)}`}
+        action={<label className="flex items-center gap-2 text-sm font-semibold text-[#182232]">Start Date <Input type="date" defaultValue={roadmap.start_date} className="w-auto rounded-xl border-[#EADBCA] bg-white" onBlur={(e) => e.target.value && e.target.value !== roadmap.start_date && setStart.mutate({ id: roadmap.id, start: e.target.value })} /></label>}
       />
       <div className="grid gap-3">
         {weeks.map((w) => <WeekCard key={w.id} w={w} current={w.week_number === cur} overdue={w.week_number < cur && !w.completed} />)}

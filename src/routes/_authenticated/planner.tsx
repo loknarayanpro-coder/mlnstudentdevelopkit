@@ -60,7 +60,12 @@ function Planner() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Daily planner" subtitle="Tasks are saved to your account as soon as you add them." action={<Input type="date" value={date} onChange={(e) => e.target.value && setDate(e.target.value)} className="w-auto" />} />
+      <PageHeader
+        badge="Study Planner"
+        title="Tasks & Focus Sessions"
+        subtitle="Organize your daily study blocks, log focused hours, and conquer placement goals."
+        action={<Input type="date" value={date} onChange={(e) => e.target.value && setDate(e.target.value)} className="w-auto rounded-xl border-[#EADBCA] bg-white font-medium" />}
+      />
       <StudyTimer tasks={list} />
       <Card title={`Tasks for ${date === today ? "today" : date}`}>
         <form className="mb-4 flex flex-wrap gap-2" onSubmit={(e) => { e.preventDefault(); add.mutate(undefined); }}>
