@@ -26,6 +26,7 @@ import {
   GraduationCap,
   ExternalLink,
   Globe,
+  Linkedin,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -583,12 +584,12 @@ export default function Landing() {
                     <span>AI Portfolio</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/lok-narayan-m-610a463b6"
+                    href="https://www.linkedin.com/in/lok-narayan-m-610a463b6/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all text-center cursor-pointer select-none"
                   >
-                    <Users className="h-4 w-4 text-[#0A66C2] shrink-0" />
+                    <Linkedin className="h-4 w-4 text-[#0A66C2] shrink-0" />
                     <span>LinkedIn Profile</span>
                   </a>
                   <a
@@ -1042,6 +1043,16 @@ export default function Landing() {
                     <MessageSquare className="h-4 w-4 text-[#2563EB]" />
                     GitHub Repository
                   </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/lok-narayan-m-610a463b6/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] transition-colors"
+                  >
+                    <Linkedin className="h-4 w-4 text-[#0A66C2]" />
+                    LinkedIn (Lok Narayan)
+                  </a>
                 </div>
               </div>
 
@@ -1134,6 +1145,15 @@ export default function Landing() {
             </a>
             <a href="#contact" className="hover:text-[#EAA82C] transition-colors">
               Contact
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lok-narayan-m-610a463b6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#EAA82C] transition-colors flex items-center gap-1.5"
+            >
+              <Linkedin className="h-3.5 w-3.5 text-[#0A66C2]" />
+              LinkedIn
             </a>
           </div>
         </div>
