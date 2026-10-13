@@ -405,11 +405,11 @@ export default function Landing() {
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF3D6] border border-[#F8D886] text-xs font-bold uppercase tracking-wider text-[#9A6208]">
                 <GraduationCap className="h-3.5 w-3.5 text-[#EAA82C]" />
-                About MLN CareerPilot
+                Built by a Student, for the Students
               </div>
 
               <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#182232] tracking-tight leading-tight">
-                Built by Students, <br />
+                Built by a Student, for the Students. <br />
                 <span className="text-[#EAA82C]">Designed for Engineering Excellence.</span>
               </h2>
 
@@ -420,7 +420,7 @@ export default function Landing() {
               </p>
 
               <p className="text-base text-[#182232]/80 leading-relaxed font-normal">
-                <strong>MLN CareerPilot</strong> was created to replace chaotic preparation with a
+                <strong>MLN CareerPilot</strong> was created by an engineering student for fellow engineering students to replace chaotic preparation with a
                 structured, data-backed flight deck. We break down the four-year engineering journey
                 into manageable daily study sessions, systematic spaced repetition for coding
                 problems, and real-time readiness scoring.
@@ -504,7 +504,7 @@ export default function Landing() {
 
       {/* ABOUT & CREATOR SECTION */}
       <section
-        id="about"
+        id="creator"
         className="py-20 bg-gradient-to-b from-[#FAF7F2] via-white to-[#FAF7F2] border-t border-[#EADBCA] relative scroll-mt-20 overflow-hidden"
       >
         {/* Ambient decorative blobs */}
