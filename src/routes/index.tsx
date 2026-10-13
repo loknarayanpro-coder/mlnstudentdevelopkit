@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Compass,
@@ -13,6 +14,13 @@ import {
   BookOpen,
   Award,
   ChevronRight,
+  Clock,
+  BarChart3,
+  ShieldCheck,
+  Zap,
+  Check,
+  Flame,
+  ListFilter,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -22,9 +30,9 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Your all-in-one platform to learn, practice, and track your placement journey — because your future deserves a plan.",
+          "Your all-in-one platform to learn, practice, and track your placement journey — explore all features and platform capabilities.",
       },
-      { property: "og:title", content: "CareerPilot — Learn Today, Build Tomorrow" },
+      { property: "og:title", content: "CareerPilot — Complete Features & Placement Suite" },
       {
         property: "og:description",
         content: "Track every step of your placement and engineering career journey.",
@@ -36,7 +44,150 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
+const featuresLog = [
+  {
+    category: "Roadmap & Planning",
+    badge: "Milestone Engine",
+    icon: Compass,
+    color: "blue",
+    title: "36-Week Structured Placement Roadmap",
+    description:
+      "An adaptive week-by-week curriculum taking students from programming foundations through mock placement drives.",
+    capabilities: [
+      "Editable weekly milestone targets & custom task checklists",
+      "Target finish date calculator based on your personalized start day",
+      "Overdue milestone alerting with automatic catch-up scheduling",
+      "Weekly reflection logs (Went well, Improvements, Rating 1–5)",
+    ],
+  },
+  {
+    category: "DSA & Coding",
+    badge: "Spaced Repetition",
+    icon: Code2,
+    color: "emerald",
+    title: "DSA Repository & Intelligent Revision Scheduler",
+    description:
+      "Systematic coding practice tracker with an automated Leitner-style spaced repetition algorithm.",
+    capabilities: [
+      "18+ Algorithm & Data Structure topic classifications (Arrays to Graphs)",
+      "Automatic spaced revisions scheduled at 1, 3, 7, 14, and 30 days",
+      "LeetCode, Codeforces, GFG, and HackerRank direct problem linking",
+      "Difficulty-weighted scoring (Easy 1x, Medium 1.5x, Hard 2x)",
+      "Solution notes, algorithmic approaches, and time-to-solve logging",
+    ],
+  },
+  {
+    category: "Roadmap & Planning",
+    badge: "Focus Engine",
+    icon: Clock,
+    color: "amber",
+    title: "Daily Study Planner & Live Focus Timer",
+    description:
+      "Turn broad placement ambitions into daily executable tasks with integrated stopwatch tracking.",
+    capabilities: [
+      "Pomodoro / Stopwatch study session timer with pause & resume",
+      "Task categories: DSA, Java, Aptitude, CS Core, Projects, Resume",
+      "Priority queues (High, Medium, Low) and daily planned minutes",
+      "Unfinished task roll-over queue with 1-click 'Move to Today'",
+      "Visual drag & drop position reordering",
+    ],
+  },
+  {
+    category: "CS Core & Aptitude",
+    badge: "Core Knowledge",
+    icon: BookOpen,
+    color: "purple",
+    title: "Technical Subjects & Interview Q&A Bank",
+    description:
+      "Comprehensive subject mastery trackers for engineering interviews and campus assessments.",
+    capabilities: [
+      "Java & Object-Oriented Programming (OOP) core concepts",
+      "DBMS: SQL queries, normalization, ACID properties, indexing",
+      "Operating Systems & Computer Networks interview modules",
+      "Interactive technical interview Q&A bank with 'Confident' toggles",
+      "Confidence ratings from 1 to 5 per subject",
+    ],
+  },
+  {
+    category: "CS Core & Aptitude",
+    badge: "Assessment Ready",
+    icon: Brain,
+    color: "orange",
+    title: "Quantitative & Reasoning Aptitude Drills",
+    description:
+      "Speed and accuracy training designed for preliminary company placement tests and exams.",
+    capabilities: [
+      "Quantitative Aptitude, Logical Reasoning, and Verbal drills",
+      "Timed attempt logger tracking total questions vs correct answers",
+      "Real-time accuracy percentage and time-per-question benchmarks",
+      "Historical test logs with date-wise performance analytics",
+    ],
+  },
+  {
+    category: "Placement Pipeline",
+    badge: "Drive Tracker",
+    icon: Briefcase,
+    color: "amber",
+    title: "Placement Pipeline & Company Kanban",
+    description:
+      "End-to-end management for campus placement drives and off-campus tech applications.",
+    capabilities: [
+      "Multi-stage Kanban: Saved → Applied → OA → Interview → Offer",
+      "Company categorization: Service-based, Product-based, Startups",
+      "Eligibility criteria & application deadline countdown reminders",
+      "Multi-round interview event schedule logger with notes",
+      "Resume version controller with ATS checklist validator",
+    ],
+  },
+  {
+    category: "Analytics & Security",
+    badge: "Scoring Algorithm",
+    icon: BarChart3,
+    color: "blue",
+    title: "Multi-Factor Preparation Score (/100)",
+    description:
+      "An honest, weighted readiness score that calculates true placement probability.",
+    capabilities: [
+      "Balanced 5-factor formula: Roadmap 30%, DSA 25%, Topics 20%, Projects 15%, Consistency 10%",
+      "Live student streak tracking with milestone badges",
+      "Readiness tiers: Getting Started, Foundation, Momentum, Placement Ready",
+      "Weekly study consistency comparison against your daily hour goal",
+    ],
+  },
+  {
+    category: "Analytics & Security",
+    badge: "Enterprise Security",
+    icon: ShieldCheck,
+    color: "emerald",
+    title: "Multi-Tenant Auth & PostgreSQL Row Level Security",
+    description:
+      "Bank-grade data isolation ensuring your career plan, notes, and records are 100% private.",
+    capabilities: [
+      "Supabase Authentication with encrypted sessions",
+      "PostgreSQL Row Level Security (RLS) on all 20+ database tables",
+      "Zero vendor lock-in with 1-click JSON full data export",
+      "Zero third-party tracking or advertising scripts",
+    ],
+  },
+];
+
 export default function Landing() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const categories = [
+    "All",
+    "Roadmap & Planning",
+    "DSA & Coding",
+    "CS Core & Aptitude",
+    "Placement Pipeline",
+    "Analytics & Security",
+  ];
+
+  const filteredFeatures =
+    selectedCategory === "All"
+      ? featuresLog
+      : featuresLog.filter((f) => f.category === selectedCategory);
+
   return (
     <div className="min-h-screen bg-[#FAF7F2] text-[#182232] flex flex-col font-sans selection:bg-[#EAA82C]/30 selection:text-[#182232] overflow-x-hidden">
       {/* Navigation Header */}
@@ -66,17 +217,14 @@ export default function Landing() {
             >
               Home
             </Link>
+            <a href="#features" className="hover:text-[#EAA82C] transition-colors font-semibold">
+              Features Log
+            </a>
             <a href="#pillars" className="hover:text-[#EAA82C] transition-colors">
               Pillars
             </a>
-            <a href="#features" className="hover:text-[#EAA82C] transition-colors">
-              Features
-            </a>
             <a href="#roadmap" className="hover:text-[#EAA82C] transition-colors">
               Roadmap
-            </a>
-            <a href="#about" className="hover:text-[#EAA82C] transition-colors">
-              About
             </a>
           </nav>
 
@@ -107,7 +255,6 @@ export default function Landing() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             {/* Left Column: 4K Illustration with floating doodle badges */}
             <div className="lg:col-span-7 relative order-2 lg:order-1">
-              {/* Subtle background warm halo glow */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-[#F8D886]/40 via-amber-100/30 to-transparent rounded-3xl blur-2xl -z-10" />
 
               <div className="relative rounded-2xl overflow-hidden border border-[#EADBCA]/80 bg-white shadow-xl">
@@ -118,7 +265,7 @@ export default function Landing() {
                   loading="eager"
                 />
 
-                {/* Micro Pill Badges Floating on the Illustration */}
+                {/* Floating Badges */}
                 <div className="absolute top-4 left-4 hidden sm:flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-full shadow-md border border-[#EADBCA] text-xs font-semibold text-[#182232]">
                   <span className="text-[#2563EB] font-mono font-bold">&lt;/&gt;</span>
                   <span>Code · Practice · Improve</span>
@@ -148,7 +295,6 @@ export default function Landing() {
 
             {/* Right Column: Hero Content */}
             <div className="lg:col-span-5 order-1 lg:order-2 space-y-6 lg:pl-6 text-left">
-              {/* Highlight strokes doodle */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF3D6] border border-[#F8D886] text-xs font-bold uppercase tracking-wider text-[#9A6208]">
                 <Sparkles className="h-3.5 w-3.5 text-[#EAA82C]" />
                 Career & Placement Management
@@ -159,7 +305,6 @@ export default function Landing() {
                   Learn Today, <br />
                   <span className="text-[#EAA82C] relative inline-block">
                     Build Tomorrow
-                    {/* Handwritten underline curve */}
                     <svg
                       className="absolute -bottom-2 left-0 w-full h-3 text-[#EAA82C]/70"
                       viewBox="0 0 200 12"
@@ -201,7 +346,7 @@ export default function Landing() {
                   size="lg"
                   className="rounded-full border-2 border-[#182232] text-[#182232] hover:bg-[#182232] hover:text-white px-6 py-6 text-base font-semibold transition-all"
                 >
-                  <Link to="/auth">Sign In</Link>
+                  <a href="#features">View Features Log &darr;</a>
                 </Button>
               </div>
 
@@ -224,7 +369,7 @@ export default function Landing() {
           </div>
         </div>
 
-        {/* Golden Wave Divider matching the bottom curve of the design */}
+        {/* Golden Wave Divider */}
         <div className="w-full mt-16 leading-none">
           <svg
             className="w-full h-16 md:h-24 text-[#F8D886]/40"
@@ -237,6 +382,113 @@ export default function Landing() {
               fill="currentColor"
             />
           </svg>
+        </div>
+      </section>
+
+      {/* FULL FEATURES LOG SECTION */}
+      <section id="features" className="py-20 bg-white border-t border-b border-[#EADBCA] relative scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-6">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FEF3D6] border border-[#F8D886] text-xs font-bold uppercase tracking-wider text-[#9A6208]">
+              <Zap className="h-3.5 w-3.5 text-[#EAA82C]" />
+              Platform Release & Capabilities Matrix
+            </div>
+            <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#182232] tracking-tight">
+              Complete Features Log
+            </h2>
+            <p className="text-base sm:text-lg text-[#182232]/75">
+              Explore all 8 dedicated modules and built-in capabilities engineered to take you from
+              first-year fundamentals to top-tier company offers.
+            </p>
+          </div>
+
+          {/* Interactive Category Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-sm ${
+                  selectedCategory === cat
+                    ? "bg-[#182232] text-white scale-105 shadow-md"
+                    : "bg-[#FAF7F2] text-[#182232]/80 hover:bg-[#EADBCA]/60 border border-[#EADBCA]"
+                }`}
+              >
+                {cat}
+                {cat === "All" && ` (${featuresLog.length})`}
+              </button>
+            ))}
+          </div>
+
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {filteredFeatures.map((feat) => {
+              const Icon = feat.icon;
+              return (
+                <div
+                  key={feat.title}
+                  className="rounded-3xl border border-[#EADBCA] bg-[#FAF7F2]/60 p-7 sm:p-8 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white border border-[#EADBCA] shadow-sm text-[#182232] group-hover:bg-[#EAA82C] group-hover:border-[#EAA82C] transition-colors">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        &check; Built & Live
+                      </span>
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#182232]/5 text-[#182232]/70 border border-[#EADBCA]">
+                        {feat.badge}
+                      </span>
+                    </div>
+                  </div>
+
+                  <h3 className="font-display text-xl font-bold text-[#182232] group-hover:text-[#EAA82C] transition-colors">
+                    {feat.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm text-[#182232]/75 leading-relaxed font-normal">
+                    {feat.description}
+                  </p>
+
+                  {/* Capabilities Checklist */}
+                  <div className="mt-6 pt-5 border-t border-[#EADBCA]/70 space-y-2.5">
+                    {feat.capabilities.map((cap, i) => (
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-[#182232]/85">
+                        <CheckCircle2 className="h-4 w-4 text-[#EAA82C] shrink-0 mt-0.5" />
+                        <span className="font-medium leading-snug">{cap}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Quick Call to Action Bar */}
+          <div className="mt-14 p-8 rounded-3xl bg-gradient-to-r from-[#FEF3D6] via-amber-100/50 to-[#FEF3D6] border border-[#F8D886] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#182232] text-white shrink-0">
+                <Sparkles className="h-6 w-6 text-[#EAA82C]" />
+              </div>
+              <div>
+                <h4 className="font-display text-lg font-bold text-[#182232]">
+                  Ready to test all features live?
+                </h4>
+                <p className="text-xs sm:text-sm text-[#182232]/75">
+                  Log in or sign up to experience the 36-week roadmap, spaced repetition DSA tracker, and study timer.
+                </p>
+              </div>
+            </div>
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-[#182232] hover:bg-[#25344c] text-white px-8 py-5 text-sm font-semibold shrink-0 shadow-md"
+            >
+              <Link to="/auth">Open Dashboard &rarr;</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -339,7 +591,6 @@ export default function Landing() {
       <section id="roadmap" className="py-20 bg-[#FAF7F2]">
         <div className="mx-auto max-w-7xl px-6">
           <div className="rounded-3xl bg-[#182232] text-white p-8 md:p-14 relative overflow-hidden shadow-2xl">
-            {/* Golden decorative accent circle */}
             <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#EAA82C]/10 blur-3xl pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -469,6 +720,9 @@ export default function Landing() {
             <Link to="/auth" className="hover:text-[#EAA82C] transition-colors">
               Sign In
             </Link>
+            <a href="#features" className="hover:text-[#EAA82C] transition-colors">
+              Features Log
+            </a>
             <a href="#pillars" className="hover:text-[#EAA82C] transition-colors">
               Pillars
             </a>
