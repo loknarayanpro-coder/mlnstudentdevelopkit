@@ -1027,11 +1027,11 @@ export default function Landing() {
 
                 <div className="pt-2 flex flex-wrap gap-4 text-sm font-semibold text-[#182232]">
                   <a
-                    href="mailto:support@careerpilot.dev"
+                    href="mailto:loknarayanpro@gmail.com"
                     className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] transition-colors"
                   >
                     <Mail className="h-4 w-4 text-[#EAA82C]" />
-                    support@careerpilot.dev
+                    loknarayanpro@gmail.com
                   </a>
 
                   <a
@@ -1154,6 +1154,13 @@ export default function Landing() {
             >
               <Linkedin className="h-3.5 w-3.5 text-[#0A66C2]" />
               LinkedIn
+            </a>
+            <a
+              href="mailto:loknarayanpro@gmail.com"
+              className="hover:text-[#EAA82C] transition-colors flex items-center gap-1.5"
+            >
+              <Mail className="h-3.5 w-3.5 text-[#EAA82C]" />
+              Email
             </a>
           </div>
         </div>
