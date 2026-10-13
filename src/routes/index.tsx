@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
       { title: "CareerPilot — Placement prep, planned and tracked" },
       { name: "description", content: "A 36-week placement roadmap with daily planner, DSA tracker, Java & CS topics, aptitude, projects and applications." },
       { property: "og:title", content: "CareerPilot — Placement prep, planned and tracked" },
-      { property: "og:description", content: "Track every step from 5th semester to your placement offer." },
+      { property: "og:description", content: "Track every step from your first year to your placement offer." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -34,10 +34,10 @@ function Landing() {
       <main className="mx-auto max-w-6xl px-5 pb-20 pt-16 md:pt-28">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">Career & placement management</p>
         <h1 className="max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
-          From 5th semester to offer letter — on a plan you can see.
+          From first year to offer letter — on a plan you can see.
         </h1>
         <p className="mt-5 max-w-xl text-lg opacity-75">
-          Daily tasks, study sessions, coding practice and applications, all saved to your account and turned into honest progress numbers.
+          Built for students of all years. Daily tasks, study sessions, coding practice and applications, all saved to your account and turned into honest progress numbers.
         </p>
         <div className="mt-8 flex gap-3">
           <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90"><Link to="/auth">Start your plan</Link></Button>
