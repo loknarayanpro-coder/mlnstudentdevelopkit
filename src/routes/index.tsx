@@ -205,7 +205,7 @@ export default function Landing() {
               <img
                 src="/mln-logo.jpg"
                 alt="MLN Logo"
-                className="h-10 w-10 rounded-xl object-cover shadow-sm border border-[#EADBCA] transform group-hover:scale-105 transition-transform"
+                className="h-10 w-10 rounded-full object-cover shadow-sm border border-[#EADBCA] transform group-hover:scale-105 transition-transform"
               />
               <div className="flex items-baseline gap-1.5">
                 <span className="font-extrabold text-[#182232]">MLN</span>
@@ -1102,7 +1102,7 @@ export default function Landing() {
             <img
               src="/mln-logo.jpg"
               alt="MLN Logo"
-              className="h-8 w-8 rounded-lg object-cover shadow-sm border border-[#2A3B54]"
+              className="h-8 w-8 rounded-full object-cover shadow-sm border border-[#2A3B54]"
             />
             <div className="flex items-baseline gap-1">
               <span className="text-[#EAA82C] font-extrabold">MLN</span>

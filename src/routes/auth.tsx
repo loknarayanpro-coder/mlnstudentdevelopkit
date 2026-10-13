@@ -96,7 +96,7 @@ function AuthPage() {
               <img
                 src="/mln-logo.jpg"
                 alt="MLN Logo"
-                className="h-10 w-10 rounded-xl object-cover shadow-sm border border-[#2A3B54] transform group-hover:scale-105 transition-transform"
+                className="h-10 w-10 rounded-full object-cover shadow-sm border border-[#2A3B54] transform group-hover:scale-105 transition-transform"
               />
               <div className="flex items-baseline gap-1.5">
                 <span className="text-[#EAA82C] font-extrabold">MLN</span>
@@ -166,7 +166,7 @@ function AuthPage() {
                 <img
                   src="/mln-logo.jpg"
                   alt="MLN Logo"
-                  className="h-7 w-7 rounded-lg object-cover border border-[#EADBCA]"
+                  className="h-7 w-7 rounded-full object-cover border border-[#EADBCA]"
                 />
                 <span className="text-[#EAA82C]">MLN</span>
                 <span>CareerPilot</span>

@@ -67,7 +67,7 @@ function Shell() {
               <img
                 src="/mln-logo.jpg"
                 alt="MLN Logo"
-                className="h-9 w-9 rounded-xl object-cover shadow-sm border border-[#2A3B54] group-hover:scale-105 transition-transform"
+                className="h-9 w-9 rounded-full object-cover shadow-sm border border-[#2A3B54] group-hover:scale-105 transition-transform"
               />
               <div className="flex items-baseline gap-1.5">
                 <span className="text-[#EAA82C] font-extrabold tracking-tight">MLN</span>
@@ -84,7 +84,7 @@ function Shell() {
           <img
             src="/mln-logo.jpg"
             alt="MLN Logo"
-            className="h-7 w-7 rounded-lg object-cover border border-[#2A3B54]"
+            className="h-7 w-7 rounded-full object-cover border border-[#2A3B54]"
           />
           <span className="text-[#EAA82C]">MLN</span>
           <span>CareerPilot</span>
