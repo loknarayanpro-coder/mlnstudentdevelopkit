@@ -530,9 +530,9 @@ export default function Landing() {
             {/* Left Column: Creator Image & Bold "MADE BY LOK" banner */}
             <div className="lg:col-span-5 flex flex-col items-center">
               <div className="w-full max-w-md relative group">
-                <div className="absolute -inset-2 bg-gradient-to-tr from-[#EAA82C]/30 via-amber-200/20 to-[#182232]/20 rounded-3xl blur-xl transition-all duration-500 group-hover:blur-2xl" />
+                <div className="absolute -inset-2 bg-gradient-to-tr from-[#EAA82C]/30 via-amber-200/20 to-[#182232]/20 rounded-3xl blur-xl transition-all duration-500 group-hover:blur-2xl pointer-events-none -z-10" />
 
-                <div className="relative rounded-3xl overflow-hidden border-2 border-[#EADBCA] bg-white p-3 shadow-2xl">
+                <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-[#EADBCA] bg-white p-3 shadow-2xl">
                   <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#182232]">
                     <img
                       src="/lok-profile.jpeg"
@@ -563,42 +563,51 @@ export default function Landing() {
                 </div>
 
                 {/* Direct Portfolio & Social CTA Buttons */}
-                <div className="mt-5 grid grid-cols-2 gap-3 w-full">
+                <div className="mt-5 grid grid-cols-2 gap-3 w-full relative z-30">
                   <a
                     href="https://modellokporftolio.vercel.app/"
                     target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all text-center cursor-pointer select-none"
                   >
-                    <ExternalLink className="h-3.5 w-3.5 text-[#EAA82C]" />
+                    <ExternalLink className="h-4 w-4 text-[#EAA82C] shrink-0" />
                     <span>Lok Portfolio</span>
                   </a>
                   <a
                     href="https://lokportfolio.vercel.app/"
                     target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all text-center cursor-pointer select-none"
                   >
-                    <Globe className="h-3.5 w-3.5 text-[#2563EB]" />
+                    <Globe className="h-4 w-4 text-[#2563EB] shrink-0" />
                     <span>AI Portfolio</span>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/lok-narayan-m-610a463b6"
                     target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all text-center cursor-pointer select-none"
                   >
-                    <Users className="h-3.5 w-3.5 text-[#0A66C2]" />
+                    <Users className="h-4 w-4 text-[#0A66C2] shrink-0" />
                     <span>LinkedIn Profile</span>
                   </a>
                   <a
                     href="https://github.com/loknarayanpro-coder"
                     target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all text-center cursor-pointer select-none"
                   >
-                    <Code2 className="h-3.5 w-3.5 text-[#182232]" />
+                    <Code2 className="h-4 w-4 text-[#182232] shrink-0" />
                     <span>GitHub Hub</span>
+                  </a>
+                  <a
+                    href="https://loknarayanpro-gwaaw87o0-loknarayanpro-7270s-projects.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="col-span-2 flex items-center justify-center gap-2 py-2.5 px-3 rounded-2xl bg-[#FEF3D6] border border-[#F8D886] hover:border-[#EAA82C] text-xs font-bold text-[#9A6208] hover:text-[#182232] shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-95 transition-all text-center cursor-pointer select-none"
+                  >
+                    <Sparkles className="h-3.5 w-3.5 text-[#EAA82C] shrink-0" />
+                    <span>Live Projects &amp; Deployments &rarr;</span>
                   </a>
                 </div>
               </div>
