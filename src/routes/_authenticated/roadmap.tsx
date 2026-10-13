@@ -4,12 +4,13 @@ import { useState } from "react";
 import { supabase, unwrap, localDate } from "@/lib/db";
 import { useAction } from "@/lib/hooks";
 import { currentWeek } from "@/lib/scoring";
+import { CURRICULUM_36_WEEKS } from "@/server/services/roadmap.service";
 import { PageHeader, Card, Loading, ErrorBox, Empty } from "@/components/app-ui";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Trash2 } from "lucide-react";
+import { Trash2, Compass, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/roadmap")({
@@ -36,9 +37,70 @@ function Roadmap() {
     unwrap(await supabase.from("roadmaps").update({ total_weeks: v.n }).eq("id", v.roadmapId));
   }, { invalidate: inv, success: "Week added" });
 
+  const initRoadmap = useAction(
+    async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) throw new Error("Please log in to initialize your roadmap.");
+
+      const { data: rm, error: rmErr } = await supabase
+        .from("roadmaps")
+        .insert({
+          user_id: user.id,
+          title: "36-Week Placement Preparation Roadmap",
+          start_date: localDate(),
+          total_weeks: CURRICULUM_36_WEEKS.length,
+          is_active: true,
+        })
+        .select()
+        .single();
+      if (rmErr) throw rmErr;
+
+      const weeksData = CURRICULUM_36_WEEKS.map((w) => ({
+        user_id: user.id,
+        roadmap_id: rm.id,
+        week_number: w.weekNumber,
+        title: w.title,
+        focus: w.focus,
+        milestone: w.milestone,
+        completed: false,
+      }));
+
+      const { error: wErr } = await supabase.from("roadmap_weeks").insert(weeksData);
+      if (wErr) throw wErr;
+    },
+    { invalidate: inv, success: "36-Week placement roadmap initialized!" }
+  );
+
   if (q.isLoading) return <Loading />;
   if (q.error) return <ErrorBox error={q.error} />;
-  if (!q.data) return <Empty>No active roadmap found.</Empty>;
+  if (!q.data) {
+    return (
+      <div className="space-y-6">
+        <PageHeader
+          badge="36-Week Placement Roadmap"
+          title="Placement Preparation Plan"
+          subtitle="A structured 36-week engineering curriculum designed for product & service company drives."
+        />
+        <div className="rounded-2xl border border-[#EADBCA] bg-white p-8 text-center shadow-sm">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EADBCA]/30 text-[#182232]">
+            <Compass className="h-7 w-7 text-[#182232]" />
+          </div>
+          <h3 className="mt-4 font-display text-xl font-bold text-[#182232]">No Active Roadmap Yet</h3>
+          <p className="mx-auto mt-2 max-w-md text-sm text-[#5B6577]">
+            Generate your personalized 36-week curriculum covering Java, DSA, System Design, Core CS, Aptitude, and Mock Interviews directly in Supabase.
+          </p>
+          <Button
+            className="mt-6 gap-2 bg-[#182232] px-6 text-white hover:bg-[#253245]"
+            onClick={() => initRoadmap.mutate(undefined)}
+            disabled={initRoadmap.isPending}
+          >
+            <Sparkles className="h-4 w-4" />
+            {initRoadmap.isPending ? "Generating 36-Week Plan..." : "Initialize 36-Week Roadmap"}
+          </Button>
+        </div>
+      </div>
+    );
+  }
   const { roadmap, weeks } = q.data;
   const cur = currentWeek(roadmap.start_date, weeks.length);
   const end = new Date(roadmap.start_date + "T00:00:00"); end.setDate(end.getDate() + weeks.length * 7);

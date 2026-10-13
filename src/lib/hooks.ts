@@ -8,7 +8,34 @@ export function useProfile() {
     queryKey: ["profile"],
     queryFn: async () => {
       const uid = await currentUserId();
-      return unwrap(await supabase.from("profiles").select("*").eq("id", uid).single());
+      const res = await supabase.from("profiles").select("*").eq("id", uid).maybeSingle();
+      if (res.data) return res.data;
+
+      const { data: userRes } = await supabase.auth.getUser();
+      const user = userRes?.user;
+      const fullName =
+        user?.user_metadata?.full_name ||
+        user?.user_metadata?.name ||
+        (user?.email ? user.email.split("@")[0] : "Student");
+
+      // Auto-provision profile row in Supabase
+      const createRes = await supabase
+        .from("profiles")
+        .upsert({
+          id: uid,
+          full_name: fullName,
+          branch: "CSE",
+          semester: 5,
+          primary_language: "Java",
+          proficiency: "Beginner",
+          placement_target: "Beginning of 7th semester",
+          daily_hours: 2.5,
+          backlogs: 0,
+        })
+        .select()
+        .single();
+
+      return unwrap(createRes);
     },
   });
 }
