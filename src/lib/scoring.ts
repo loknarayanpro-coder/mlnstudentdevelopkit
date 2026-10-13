@@ -51,9 +51,9 @@ export function currentWeek(startDate: string | null, totalWeeks: number, today 
 
 /** Next spaced-revision date given revision count and intervals (days). */
 export function nextRevision(fromDate: string, revisionCount: number, intervals = [1, 3, 7, 14, 30]): string {
-  const d = new Date(fromDate + "T00:00:00");
+  const d = new Date(fromDate + "T00:00:00Z");
   const gap = intervals[Math.min(revisionCount, intervals.length - 1)] ?? 1;
-  d.setDate(d.getDate() + gap);
+  d.setUTCDate(d.getUTCDate() + gap);
   return d.toISOString().slice(0, 10);
 }
 

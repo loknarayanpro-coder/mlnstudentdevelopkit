@@ -6,7 +6,8 @@
 
 @theme inline {
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat", cursive, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -26,6 +27,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-light: var(--accent-light);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
@@ -50,45 +52,46 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* "Flight deck": warm paper, deep ink navy, signal amber. */
+/* Warm cream, golden amber, deep navy ink theme matching the design */
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.975 0.008 85);
-  --foreground: oklch(0.22 0.04 255);
-  --card: oklch(0.995 0.004 85);
-  --card-foreground: oklch(0.22 0.04 255);
-  --popover: oklch(0.995 0.004 85);
-  --popover-foreground: oklch(0.22 0.04 255);
-  --primary: oklch(0.28 0.06 255);
-  --primary-foreground: oklch(0.98 0.01 85);
-  --secondary: oklch(0.93 0.015 85);
-  --secondary-foreground: oklch(0.28 0.06 255);
-  --muted: oklch(0.94 0.012 85);
-  --muted-foreground: oklch(0.5 0.03 255);
-  --accent: oklch(0.76 0.16 65);
-  --accent-foreground: oklch(0.22 0.04 255);
-  --destructive: oklch(0.58 0.22 27);
-  --destructive-foreground: oklch(0.98 0.01 85);
-  --success: oklch(0.6 0.13 155);
-  --success-foreground: oklch(0.98 0.01 85);
-  --ink: oklch(0.22 0.05 255);
-  --ink-foreground: oklch(0.96 0.01 85);
-  --border: oklch(0.88 0.015 85);
-  --input: oklch(0.86 0.015 85);
-  --ring: oklch(0.76 0.16 65);
-  --chart-1: oklch(0.76 0.16 65);
-  --chart-2: oklch(0.38 0.08 255);
-  --chart-3: oklch(0.6 0.13 155);
-  --chart-4: oklch(0.65 0.15 25);
-  --chart-5: oklch(0.6 0.1 220);
-  --sidebar: oklch(0.22 0.05 255);
-  --sidebar-foreground: oklch(0.9 0.015 85);
-  --sidebar-primary: oklch(0.76 0.16 65);
-  --sidebar-primary-foreground: oklch(0.22 0.04 255);
-  --sidebar-accent: oklch(0.3 0.05 255);
-  --sidebar-accent-foreground: oklch(0.98 0.01 85);
-  --sidebar-border: oklch(0.32 0.04 255);
-  --sidebar-ring: oklch(0.76 0.16 65);
+  --radius: 0.85rem;
+  --background: #FAF7F2;
+  --foreground: #182232;
+  --card: #FFFFFF;
+  --card-foreground: #182232;
+  --popover: #FFFFFF;
+  --popover-foreground: #182232;
+  --primary: #182232;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3ECE1;
+  --secondary-foreground: #182232;
+  --muted: #F2EDE4;
+  --muted-foreground: #6B7280;
+  --accent: #EAA82C;
+  --accent-foreground: #182232;
+  --accent-light: #FEF3D6;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --success: #10B981;
+  --success-foreground: #FFFFFF;
+  --ink: #182232;
+  --ink-foreground: #FAF7F2;
+  --border: #EADBCA;
+  --input: #EADBCA;
+  --ring: #EAA82C;
+  --chart-1: #EAA82C;
+  --chart-2: #2563EB;
+  --chart-3: #10B981;
+  --chart-4: #F97316;
+  --chart-5: #8B5CF6;
+  --sidebar: #182232;
+  --sidebar-foreground: #E2E8F0;
+  --sidebar-primary: #EAA82C;
+  --sidebar-primary-foreground: #182232;
+  --sidebar-accent: #233147;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #2A3B54;
+  --sidebar-ring: #EAA82C;
 }
 
 @layer base {
@@ -102,9 +105,12 @@
 }
 
 @utility font-display { font-family: var(--font-display); }
-@utility grid-paper {
-  background-image:
-    linear-gradient(to right, color-mix(in oklch, var(--ink-foreground) 6%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--ink-foreground) 6%, transparent) 1px, transparent 1px);
-  background-size: 32px 32px;
+@utility font-hand { font-family: var(--font-hand); }
+
+@utility warm-shadow {
+  box-shadow: 0 10px 30px -5px rgba(234, 168, 44, 0.12), 0 4px 12px -2px rgba(24, 34, 50, 0.05);
+}
+
+@utility warm-gradient-wave {
+  background: radial-gradient(circle at 100% 100%, #F8D886 0%, #FAF7F2 65%);
 }

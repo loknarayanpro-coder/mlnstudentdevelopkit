@@ -59,21 +59,32 @@ function Shell() {
   );
 
   return (
-    <div className="min-h-screen md:flex">
-      <aside className="hidden w-60 shrink-0 bg-sidebar p-4 text-sidebar-foreground md:block">
+    <div className="min-h-screen md:flex bg-[#FAF7F2]">
+      <aside className="hidden w-64 shrink-0 bg-[#182232] p-5 text-white md:block border-r border-[#2A3B54]">
         <div className="sticky top-4">
-          <div className="mb-6 flex items-center gap-2 px-2 font-display text-lg font-semibold">
-            <Compass className="h-5 w-5 text-sidebar-primary" /> CareerPilot
-          </div>
+          <Link to="/" className="mb-8 block">
+            <div className="flex items-center gap-2.5 px-2 font-display text-lg font-bold">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EAA82C] text-[#182232]">
+                <Compass className="h-4 w-4" />
+              </div>
+              <span>CAREERPILOT</span>
+            </div>
+            <div className="h-0.5 w-24 bg-[#EAA82C] rounded-full mt-1.5 ml-2" />
+          </Link>
           {links}
         </div>
       </aside>
-      <header className="sticky top-0 z-30 flex items-center justify-between bg-sidebar px-4 py-3 text-sidebar-foreground md:hidden">
-        <div className="flex items-center gap-2 font-display font-semibold"><Compass className="h-5 w-5 text-sidebar-primary" /> CareerPilot</div>
+      <header className="sticky top-0 z-30 flex items-center justify-between bg-[#182232] px-4 py-3 text-white md:hidden border-b border-[#2A3B54]">
+        <div className="flex items-center gap-2 font-display font-bold">
+          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EAA82C] text-[#182232]">
+            <Compass className="h-4 w-4" />
+          </div>
+          <span>CareerPilot</span>
+        </div>
         <button aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       </header>
-      {open && <div className="fixed inset-x-0 top-12 z-20 bg-sidebar p-4 text-sidebar-foreground md:hidden">{links}</div>}
-      <main className="mx-auto w-full max-w-6xl flex-1 p-4 md:p-8"><Outlet /></main>
+      {open && <div className="fixed inset-x-0 top-12 z-20 bg-[#182232] p-4 text-white md:hidden border-b border-[#2A3B54] shadow-2xl">{links}</div>}
+      <main className="mx-auto w-full max-w-6xl flex-1 p-4 md:p-8 bg-[#FAF7F2] min-h-screen"><Outlet /></main>
     </div>
   );
 }
