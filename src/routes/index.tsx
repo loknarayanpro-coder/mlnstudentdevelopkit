@@ -593,13 +593,11 @@ export default function Landing() {
                     <span>LinkedIn Profile</span>
                   </a>
                   <a
-                    href="https://github.com/loknarayanpro-coder"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="mailto:loknarayanpro@gmail.com"
                     className="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all text-center cursor-pointer select-none"
                   >
-                    <Code2 className="h-4 w-4 text-[#182232] shrink-0" />
-                    <span>GitHub Hub</span>
+                    <Mail className="h-4 w-4 text-[#EA4335] shrink-0" />
+                    <span>Email Me</span>
                   </a>
                   <a
                     href="https://loknarayanpro-gwaaw87o0-loknarayanpro-7270s-projects.vercel.app/"
@@ -1032,16 +1030,6 @@ export default function Landing() {
                   >
                     <Mail className="h-4 w-4 text-[#EAA82C]" />
                     loknarayanpro@gmail.com
-                  </a>
-
-                  <a
-                    href="https://github.com/loknarayanpro-coder/mlnstudentdevelopkit"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] transition-colors"
-                  >
-                    <MessageSquare className="h-4 w-4 text-[#2563EB]" />
-                    GitHub Repository
                   </a>
 
                   <a
