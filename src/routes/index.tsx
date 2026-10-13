@@ -24,6 +24,8 @@ import {
   MessageSquare,
   HeartHandshake,
   GraduationCap,
+  ExternalLink,
+  Globe,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -491,6 +493,214 @@ export default function Landing() {
                   <div className="bg-[#233147] p-3 rounded-xl border border-[#2A3B54]">
                     <div className="text-xs text-white/60">Platform Access</div>
                     <div className="text-sm font-bold text-[#EAA82C] mt-0.5">100% Free Forever</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT & CREATOR SECTION */}
+      <section
+        id="about"
+        className="py-20 bg-gradient-to-b from-[#FAF7F2] via-white to-[#FAF7F2] border-t border-[#EADBCA] relative scroll-mt-20 overflow-hidden"
+      >
+        {/* Ambient decorative blobs */}
+        <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-[#EAA82C]/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 right-0 w-96 h-96 rounded-full bg-[#182232]/5 blur-3xl pointer-events-none" />
+
+        <div className="mx-auto max-w-7xl px-6 relative">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FEF3D6] border border-[#F8D886] text-xs font-bold uppercase tracking-wider text-[#9A6208]">
+              <Sparkles className="h-3.5 w-3.5 text-[#EAA82C]" />
+              Architect &amp; Founder Spotlight
+            </div>
+            <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#182232] tracking-tight">
+              About the Creator &amp; Platform
+            </h2>
+            <p className="text-base sm:text-lg text-[#182232]/75">
+              Built by an engineering student for engineering students. Driven by real placement
+              challenges, modern system design, and AI-accelerated learning.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Column: Creator Image & Bold "MADE BY LOK" banner */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="w-full max-w-md relative group">
+                <div className="absolute -inset-2 bg-gradient-to-tr from-[#EAA82C]/30 via-amber-200/20 to-[#182232]/20 rounded-3xl blur-xl transition-all duration-500 group-hover:blur-2xl" />
+
+                <div className="relative rounded-3xl overflow-hidden border-2 border-[#EADBCA] bg-white p-3 shadow-2xl">
+                  <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#182232]">
+                    <img
+                      src="/lok-profile.jpeg"
+                      alt="M. Lok Narayan"
+                      className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.02] transition-transform duration-700 group-hover:scale-105"
+                    />
+
+                    {/* Floating badges */}
+                    <div className="absolute top-3 left-3 bg-[#182232]/90 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-semibold border border-white/10 flex items-center gap-1.5 shadow-md">
+                      <Code2 className="h-3.5 w-3.5 text-[#EAA82C]" />
+                      <span>Full-Stack Architect</span>
+                    </div>
+
+                    <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-[#182232] px-3 py-1 rounded-full text-xs font-bold border border-[#EADBCA] shadow-md">
+                      Chennai, India 📍
+                    </div>
+                  </div>
+
+                  {/* MANDATORY BOLD TEXT USER REQUIREMENT: "MADE BY LOK" */}
+                  <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-[#182232] via-[#202d42] to-[#182232] text-center border-2 border-[#EAA82C] shadow-lg">
+                    <div className="text-2xl sm:text-3xl font-black tracking-widest text-[#EAA82C] uppercase drop-shadow-md">
+                      <b>MADE BY LOK</b>
+                    </div>
+                    <p className="text-xs text-white/90 font-semibold tracking-wider uppercase mt-1">
+                      M. Lok Narayan &bull; Developer &amp; Architect
+                    </p>
+                  </div>
+                </div>
+
+                {/* Direct Portfolio & Social CTA Buttons */}
+                <div className="mt-5 grid grid-cols-2 gap-3 w-full">
+                  <a
+                    href="https://modellokporftolio.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5 text-[#EAA82C]" />
+                    <span>Lok Portfolio</span>
+                  </a>
+                  <a
+                    href="https://lokportfolio.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                  >
+                    <Globe className="h-3.5 w-3.5 text-[#2563EB]" />
+                    <span>AI Portfolio</span>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/lok-narayan-m-610a463b6"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                  >
+                    <Users className="h-3.5 w-3.5 text-[#0A66C2]" />
+                    <span>LinkedIn Profile</span>
+                  </a>
+                  <a
+                    href="https://github.com/loknarayanpro-coder"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white border border-[#EADBCA] hover:border-[#EAA82C] text-xs font-bold text-[#182232] hover:text-[#EAA82C] shadow-sm transition-all text-center"
+                  >
+                    <Code2 className="h-3.5 w-3.5 text-[#182232]" />
+                    <span>GitHub Hub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Bio, Philosophy, Education, Experience */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EAA82C]">
+                  <span>Vision &amp; Engineering Philosophy</span>
+                </div>
+                <h3 className="font-display text-2xl sm:text-4xl font-extrabold text-[#182232] leading-tight">
+                  &ldquo;I don't just write code. I design ecosystems.&rdquo;
+                </h3>
+                <p className="text-base text-[#182232]/80 leading-relaxed">
+                  CareerPilot is crafted by <b>M. Lok Narayan</b>, an AI-enhanced full-stack
+                  developer and engineering undergraduate at{" "}
+                  <b>Velammal Institute of Technology</b> (B.E. Computer Science &amp;
+                  Engineering, ETA 2028).
+                </p>
+                <p className="text-sm text-[#182232]/75 leading-relaxed">
+                  Recognizing the overwhelming fragmentation of campus placement prep &mdash; where
+                  students juggle disparate spreadsheets, LeetCode tabs, aptitude PDFs, and interview
+                  flashcards &mdash; Lok engineered CareerPilot to bring the entire placement journey
+                  under one unified, high-performance cockpit.
+                </p>
+              </div>
+
+              {/* Education & Core Background Card */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="p-4 rounded-2xl bg-white border border-[#EADBCA] shadow-sm space-y-1">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#2563EB]">
+                    <GraduationCap className="h-4 w-4" />
+                    <span>Education</span>
+                  </div>
+                  <h4 className="text-sm font-bold text-[#182232]">
+                    B.E. Computer Science &amp; Engineering
+                  </h4>
+                  <p className="text-xs text-[#182232]/70">
+                    Velammal Institute of Technology &bull; Expected 2028
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-[#EADBCA] shadow-sm space-y-1">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EAA82C]">
+                    <Briefcase className="h-4 w-4" />
+                    <span>Industry Experience</span>
+                  </div>
+                  <h4 className="text-sm font-bold text-[#182232]">
+                    Software Engineering Intern
+                  </h4>
+                  <p className="text-xs text-[#182232]/70">
+                    Infosys Technologies &bull; REST APIs &amp; Scalable Services
+                  </p>
+                </div>
+              </div>
+
+              {/* Experience Badges */}
+              <div className="p-5 rounded-2xl bg-white border border-[#EADBCA] shadow-sm space-y-3">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#182232]/80">
+                  Internships &amp; Technical Engagements
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#EADBCA] text-xs font-semibold text-[#182232]">
+                    🏢 Infosys Technologies (SWE Intern)
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#EADBCA] text-xs font-semibold text-[#182232]">
+                    💻 Indiwebpros (Full Stack)
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#EADBCA] text-xs font-semibold text-[#182232]">
+                    ☁️ SystemTron (AWS Cloud Architecture)
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#EADBCA] text-xs font-semibold text-[#182232]">
+                    ⚡ Thiranex &amp; Orivionar
+                  </span>
+                </div>
+              </div>
+
+              {/* Key Highlights / Mindset Pills */}
+              <div className="grid grid-cols-3 gap-3 text-center">
+                <div className="p-3 rounded-xl bg-[#FAF7F2] border border-[#EADBCA]">
+                  <div className="text-xs font-bold text-[#EAA82C] uppercase tracking-wider">
+                    Mindset
+                  </div>
+                  <div className="text-sm font-extrabold text-[#182232] mt-0.5">
+                    Problem Solver
+                  </div>
+                </div>
+                <div className="p-3 rounded-xl bg-[#FAF7F2] border border-[#EADBCA]">
+                  <div className="text-xs font-bold text-[#2563EB] uppercase tracking-wider">
+                    Approach
+                  </div>
+                  <div className="text-sm font-extrabold text-[#182232] mt-0.5">
+                    Vibe Coder
+                  </div>
+                </div>
+                <div className="p-3 rounded-xl bg-[#FAF7F2] border border-[#EADBCA]">
+                  <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider">
+                    Focus
+                  </div>
+                  <div className="text-sm font-extrabold text-[#182232] mt-0.5">
+                    Zero Friction
                   </div>
                 </div>
               </div>
